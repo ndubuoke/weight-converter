@@ -23,7 +23,7 @@ This is a simple React + Express application that allows users to convert betwee
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/weight-converter.git
+git clone https://github.com/ndubuoke/weight-converter.git
 cd weight-converter
 ```
 

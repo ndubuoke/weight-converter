@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weight-converter
+  labels:
+    app: weight-converter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: weight-converter
+  template:
+    metadata:
+      labels:
+        app: weight-converter
+    spec:
+      containers:
+      - name: weight-converter
+        image: ndubuoke/weight-converter:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "100m"
+          limits:
+            memory: "64Mi"
+            cpu: "200m"
+        env:
+        - name: ENVIRONMENT
+          value: "development"
